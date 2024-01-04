@@ -381,8 +381,22 @@ static void _internal_module_set_pwr(uint8_t enable)
 {
   if (enable) {
     INTERNAL_MODULE_ON();
+    #if defined(STATUS_LEDS)
+    #if !defined(POWER_LED_BLUE)
+      ledBlue();
+    #else
+      ledGreen();
+    #endif
+    #endif
   } else {
     INTERNAL_MODULE_OFF();
+    #if defined(STATUS_LEDS)
+    #if !defined(POWER_LED_BLUE)
+      ledGreen();
+    #else
+      ledBlue();
+    #endif
+    #endif
   }
 }
 
@@ -445,6 +459,13 @@ static void _external_module_set_pwr(uint8_t enable)
 {
   if (enable) {
     EXTERNAL_MODULE_ON();
+    #if defined(STATUS_LEDS)
+    #if !defined(POWER_LED_BLUE)
+      ledBlue();
+    #else
+      ledGreen();
+    #endif
+    #endif
 #if defined(PCBNV14)
     if (hardwareOptions.pcbrev == PCBREV_NV14) {
       gpio_clear(EXTMODULE_PWR_FIX_GPIO);
@@ -452,6 +473,13 @@ static void _external_module_set_pwr(uint8_t enable)
 #endif
   } else {
     EXTERNAL_MODULE_OFF();
+    #if defined(STATUS_LEDS)
+    #if !defined(POWER_LED_BLUE)
+      ledGreen();
+    #else
+      ledBlue();
+    #endif
+    #endif
 #if defined(PCBNV14)
     if (hardwareOptions.pcbrev == PCBREV_NV14) {
       gpio_set(EXTMODULE_PWR_FIX_GPIO);
