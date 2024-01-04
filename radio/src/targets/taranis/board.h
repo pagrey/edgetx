@@ -268,7 +268,7 @@ enum EnumSwitches
 };
 #if defined(RADIO_TX12) || defined(RADIO_TX12MK2)
   #define IS_3POS(x)                      ((x) != SW_SA && (x) != SW_SD)
-#elif defined(RADIO_BOXER) || defined(RADIO_ZORRO)
+#elif defined(RADIO_BOXER) || defined(RADIO_ZORRO) || defined(RADIO_TLITE)
   #define IS_3POS(x)                      ((x) == SW_SB || (x) == SW_SC)
 #else
   #define IS_3POS(x)                      ((x) != SW_SF && (x) != SW_SH)
@@ -372,7 +372,7 @@ enum EnumSwitchesPositions
 #elif defined(RADIO_TLITE) || defined(RADIO_LR3PRO)
   #define NUM_SWITCHES                  4
   #define STORAGE_NUM_SWITCHES          8
-  #define DEFAULT_SWITCH_CONFIG         (SWITCH_2POS << 6) + (SWITCH_2POS << 4) + (SWITCH_3POS << 2) + (SWITCH_3POS << 0);
+  #define DEFAULT_SWITCH_CONFIG         (SWITCH_2POS << 6) + (SWITCH_3POS << 4) + (SWITCH_3POS << 2) + (SWITCH_2POS << 0);
   #define DEFAULT_POTS_CONFIG           (0)
 #elif defined(RADIO_TPRO)
   #define NUM_SWITCHES                  10

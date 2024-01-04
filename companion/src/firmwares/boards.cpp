@@ -220,11 +220,21 @@ SwitchInfo Boards::getSwitchInfo(Board::Type board, int index)
     if (index < DIM(switches))
       return switches[index];
   }
-  else if (IS_TARANIS_XLITE(board) || IS_JUMPER_TLITE(board) || IS_JUMPER_TPRO(board) || IS_BETAFPV_LR3PRO(board)) {
+  else if (IS_TARANIS_XLITE(board) || IS_JUMPER_TPRO(board) || IS_BETAFPV_LR3PRO(board)) {
     const Board::SwitchInfo switches[] = {
       {SWITCH_3POS,   "SA"},
       {SWITCH_3POS,   "SB"},
       {SWITCH_2POS,   "SC"},
+      {SWITCH_2POS,   "SD"}
+    };
+    if (index < DIM(switches))
+      return switches[index];
+  }
+  else if (IS_JUMPER_TLITE(board)) {
+    const Board::SwitchInfo switches[] = {
+      {SWITCH_2POS,   "SA"},
+      {SWITCH_3POS,   "SB"},
+      {SWITCH_3POS,   "SC"},
       {SWITCH_2POS,   "SD"}
     };
     if (index < DIM(switches))
