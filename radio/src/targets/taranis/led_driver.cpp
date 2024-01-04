@@ -112,3 +112,20 @@ void ledBlue()
   GPIO_LED_GPIO_ON(LED_BLUE_GPIO, LED_BLUE_GPIO_PIN);
 #endif
 }
+
+void ledPwr()
+{
+  ledOff();
+  if (IS_EXTERNAL_MODULE_ON() || IS_INTERNAL_MODULE_ON())
+  #if !defined(POWER_LED_BLUE)
+    ledBlue();
+  #else
+    ledGreen();
+  #endif
+  else
+  #if !defined(POWER_LED_BLUE)
+    ledGreen();
+  #else
+    ledBlue();
+  #endif
+}
