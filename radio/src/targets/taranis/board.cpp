@@ -167,11 +167,7 @@ void boardInit()
 
 #if defined(STATUS_LEDS)
   ledInit();
-#if !defined(POWER_LED_BLUE) && (defined(MANUFACTURER_RADIOMASTER) || defined(MANUFACTURER_JUMPER) || defined(RADIO_COMMANDO8))
-  ledBlue();
-#else
-  ledGreen();
-#endif
+  ledPwr();
 #endif
 
 // If the radio was powered on by dual use USB, halt the boot process, let battery charge
