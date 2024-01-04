@@ -458,6 +458,11 @@
   #define SWITCHES_GPIO_PIN_A_L         GPIO_Pin_13 // PE.13
   #define SWITCHES_GPIO_REG_A_H         GPIOE->IDR
   #define SWITCHES_GPIO_PIN_A_H         GPIO_Pin_7  // PE.07
+#elif defined(RADIO_TLITE)
+  #define STORAGE_SWITCH_A
+  #define HARDWARE_SWITCH_A
+  #define SWITCHES_GPIO_REG_A           GPIOE->IDR
+  #define SWITCHES_GPIO_PIN_A           GPIO_Pin_14 // PE.14
 #elif defined(PCBX7)
   #define STORAGE_SWITCH_A
   #define HARDWARE_SWITCH_A
@@ -502,7 +507,14 @@
   #define SWITCHES_GPIO_PIN_B_L         GPIO_Pin_5  // PE.05
   #define SWITCHES_GPIO_REG_B_H         GPIOE->IDR
   #define SWITCHES_GPIO_PIN_B_H         GPIO_Pin_4  // PE.04
-#elif defined(RADIO_TLITE) || defined(RADIO_TPRO)
+#elif defined(RADIO_TLITE)
+  #define STORAGE_SWITCH_B
+  #define HARDWARE_SWITCH_B
+  #define SWITCHES_GPIO_REG_B_L         GPIOE->IDR
+  #define SWITCHES_GPIO_PIN_B_L         GPIO_Pin_7  // PE.07
+  #define SWITCHES_GPIO_REG_B_H         GPIOE->IDR
+  #define SWITCHES_GPIO_PIN_B_H         GPIO_Pin_13 // PE.13
+#elif defined(RADIO_TPRO)
   #define STORAGE_SWITCH_B
   #define HARDWARE_SWITCH_B
   #define SWITCHES_GPIO_REG_B_L         GPIOE->IDR
@@ -595,7 +607,14 @@
   #define SWITCHES_GPIO_PIN_C_L         GPIO_Pin_4  // PC.04 
   #define SWITCHES_GPIO_REG_C_H         GPIOA->IDR
   #define SWITCHES_GPIO_PIN_C_H         GPIO_Pin_6  // PA.06   
-#elif defined(RADIO_TLITE) || defined(RADIO_TPRO) || defined(RADIO_LR3PRO)
+#elif defined(RADIO_TLITE)
+  #define STORAGE_SWITCH_C
+  #define HARDWARE_SWITCH_C
+  #define SWITCHES_GPIO_REG_C_L         GPIOE->IDR
+  #define SWITCHES_GPIO_PIN_C_L         GPIO_Pin_1  // PE.01
+  #define SWITCHES_GPIO_REG_C_H         GPIOE->IDR
+  #define SWITCHES_GPIO_PIN_C_H         GPIO_Pin_2  // PE.02
+#elif defined(RADIO_TPRO) || defined(RADIO_LR3PRO)
   #define STORAGE_SWITCH_C
   #define HARDWARE_SWITCH_C
   #define SWITCHES_GPIO_REG_C           GPIOE->IDR
