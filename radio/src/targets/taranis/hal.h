@@ -565,6 +565,11 @@
   #define HARDWARE_SWITCH_A
   #define SWITCHES_GPIO_REG_A           GPIOE
   #define SWITCHES_GPIO_PIN_A           LL_GPIO_PIN_3  // PE.03
+#elif defined(RADIO_TLITE)
+  #define STORAGE_SWITCH_A
+  #define HARDWARE_SWITCH_A
+  #define SWITCHES_GPIO_REG_A           GPIOE
+  #define SWITCHES_GPIO_PIN_A           LL_GPIO_PIN_14 // PE.14
 #elif defined(RADIO_TPRO) || defined(RADIO_TPROV2)
   #define STORAGE_SWITCH_A
   #define HARDWARE_SWITCH_A
@@ -622,13 +627,20 @@
   #define SWITCHES_GPIO_PIN_B_L         LL_GPIO_PIN_5  // PE.05
   #define SWITCHES_GPIO_REG_B_H         GPIOE
   #define SWITCHES_GPIO_PIN_B_H         LL_GPIO_PIN_4  // PE.04
-#elif defined(RADIO_TLITE) || defined(RADIO_TPRO) || defined(RADIO_TPROV2)
+#elif defined(RADIO_TPRO) || defined(RADIO_TPROV2)
   #define STORAGE_SWITCH_B
   #define HARDWARE_SWITCH_B
   #define SWITCHES_GPIO_REG_B_L         GPIOE
   #define SWITCHES_GPIO_PIN_B_L         LL_GPIO_PIN_1  // PE.01
   #define SWITCHES_GPIO_REG_B_H         GPIOE
   #define SWITCHES_GPIO_PIN_B_H         LL_GPIO_PIN_2  // PE.02
+#elif defined(RADIO_TLITE)
+  #define STORAGE_SWITCH_B
+  #define HARDWARE_SWITCH_B
+  #define SWITCHES_GPIO_REG_B_L         GPIOE
+  #define SWITCHES_GPIO_PIN_B_L         LL_GPIO_PIN_7  // PE.07
+  #define SWITCHES_GPIO_REG_B_H         GPIOE
+  #define SWITCHES_GPIO_PIN_B_H         LL_GPIO_PIN_13 // PE.13
 #elif defined(RADIO_FAMILY_T20)
   #define STORAGE_SWITCH_B
   #define HARDWARE_SWITCH_B
@@ -738,11 +750,19 @@
   #define SWITCHES_GPIO_PIN_C_L         LL_GPIO_PIN_4  // PC.04 
   #define SWITCHES_GPIO_REG_C_H         GPIOA
   #define SWITCHES_GPIO_PIN_C_H         LL_GPIO_PIN_6  // PA.06   
-#elif defined(RADIO_TLITE) || defined(RADIO_TPRO) || defined(RADIO_TPROV2) || defined(RADIO_LR3PRO)
+#elif defined(RADIO_TPRO) || defined(RADIO_TPROV2) || defined(RADIO_LR3PRO)
   #define STORAGE_SWITCH_C
   #define HARDWARE_SWITCH_C
   #define SWITCHES_GPIO_REG_C           GPIOE
   #define SWITCHES_GPIO_PIN_C           LL_GPIO_PIN_14 // PE.14
+#elif defined(RADIO_TLITE)
+  #define STORAGE_SWITCH_C
+  #define HARDWARE_SWITCH_C
+  #define SWITCHES_GPIO_REG_C_L         GPIOE
+  #define SWITCHES_GPIO_PIN_C_L         LL_GPIO_PIN_1  // PE.01
+  #define SWITCHES_GPIO_REG_C_H         GPIOE
+  #define SWITCHES_GPIO_PIN_C_H         LL_GPIO_PIN_2  // PE.02
+#elif defined(RADIO_TLITE)
 #elif defined(RADIO_FAMILY_T20)
   #define STORAGE_SWITCH_C
   #define HARDWARE_SWITCH_C
