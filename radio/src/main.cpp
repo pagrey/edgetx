@@ -300,16 +300,7 @@ void checkHatsAsKeys()
 }
 #endif
 
-#if defined(EEPROM)
-void checkEeprom()
-{
-  if (eepromIsWriting())
-    eepromWriteProcess();
-  else if (TIME_TO_WRITE())
-    storageCheck(false);
-}
-#else
-void checkEeprom()
+void checkStorageUpdate()
 {
 #if defined(RTC_BACKUP_RAM) && !defined(SIMU)
   if (TIME_TO_BACKUP_RAM()) {
@@ -323,7 +314,6 @@ void checkEeprom()
     storageCheck(false);
   }
 }
-#endif
 
 #define BAT_AVG_SAMPLES       8
 
@@ -551,7 +541,7 @@ void perMain()
   checkSpeakerVolume();
 
   if (!usbPlugged() || (getSelectedUsbMode() == USB_UNSELECTED_MODE)) {
-    checkEeprom();
+    checkStorageUpdate();
     
     #if !defined(SIMU)     // use FreeRTOS software timer if radio firmware
       initLoggingTimer();  // initialize software timer for logging
@@ -594,7 +584,6 @@ void perMain()
     sdMount();
   }
 
-#if !defined(EEPROM)
   // In case the SD card is removed during the session
   if ((!usbPlugged() || (getSelectedUsbMode() == USB_UNSELECTED_MODE))
       && !SD_CARD_PRESENT() && !UNEXPECTED_SHUTDOWN()) {
@@ -605,7 +594,6 @@ void perMain()
     return;
 #endif
   }
-#endif
 
   if (usbPlugged() && getSelectedUsbMode() == USB_MASS_STORAGE_MODE) {
 #if defined(LIBOPENUI)
