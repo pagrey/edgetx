@@ -88,6 +88,7 @@ class CustomFunctionsPanel : public GenericPanel
     int harpicId;
     int repeatId;
     int repeatLuaId;
+    int repeatSetScreenId;
     int gvarAdjustModeId;
 
     QSet<QString> tracksSet;
