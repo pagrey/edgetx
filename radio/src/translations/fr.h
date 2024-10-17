@@ -120,6 +120,7 @@
 #define TR_SF_DISABLE_TOUCH            "Non Tactile"
 #define TR_SF_DISABLE_AUDIO_AMP        "Désact. Ampli Audio"
 #define TR_SF_SET_SCREEN               "Définir Écran Princ."
+#define TR_SF_SET_TELEMSCREEN          "Aff. écran"
 #define TR_SF_LCD_TO_VIDEO             "LCD to Video"
 
 #define TR_FSW_RESET_TELEM             TR("Télem.", "Télémétrie")
