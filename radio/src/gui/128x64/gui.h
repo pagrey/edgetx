@@ -31,14 +31,6 @@
 
 #define MENUS_SCROLLBAR_WIDTH          0
 
-#if defined(NAVIGATION_X7)
-  #define HEADER_LINE                  0
-  #define HEADER_LINE_COLUMNS
-#else
-  #define HEADER_LINE                  1
-  #define HEADER_LINE_COLUMNS          0,
-#endif
-
 #define drawFieldLabel(x, y, str)      lcdDrawTextAlignedLeft(y, str)
 
 #define NUM_BODY_LINES                 (LCD_LINES-1)
