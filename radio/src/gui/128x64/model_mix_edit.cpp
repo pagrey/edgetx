@@ -90,22 +90,10 @@ void drawOffsetBar(uint8_t x, uint8_t y, MixData * md)
 
 void menuModelMixOne(event_t event)
 {
-#if defined(KEYS_GPIO_REG_MDL)
-  if (event == EVT_KEY_FIRST(KEY_MODEL)) {
+  if (EVT_KEY_OPEN_CHAN_VIEW(event)) {
     pushMenu(menuChannelsView);
-    killEvents(event);
   }
-#elif defined(NAVIGATION_X7)
-  if (event == EVT_KEY_FIRST(KEY_MENU)) {
-    pushMenu(menuChannelsView);
-    killEvents(event);
-  }
-#elif defined(NAVIGATION_XLITE)
-  if (event == EVT_KEY_FIRST(KEY_ENTER) && keysGetState(KEY_SHIFT)) {
-    pushMenu(menuChannelsView);
-    killEvents(event);
-  }
-#endif
+
   MixData * md2 = mixAddress(s_currIdx) ;
   putsChn(PSIZE(TR_MIXES)*FW+FW, 0, md2->destCh+1,0);
 

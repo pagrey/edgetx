@@ -471,24 +471,23 @@ void menuMainView(event_t event)
       LOAD_MODEL_BITMAP();
       break;
 
-    case EVT_KEY_LONG(KEY_ENTER):
-      killEvents(event);
+    case EVT_KEY_CONTEXT_MENU:
       if (modelHasNotes()) {
         POPUP_MENU_ADD_ITEM(STR_VIEW_NOTES);
       }
       POPUP_MENU_START(onMainViewMenu, 3, STR_RESET_SUBMENU, STR_STATISTICS, STR_ABOUT_US);
       break;
 
-    case EVT_KEY_BREAK(KEY_MENU):
+    case EVT_KEY_MODEL_MENU:
       pushMenu(menuModelSelect);
       break;
 
-    case EVT_KEY_LONG(KEY_MENU):
+    case EVT_KEY_GENERAL_MENU:
       pushMenu(menuTabGeneral[0].menuFunc);
       killEvents(event);
       break;
 
-    case EVT_KEY_BREAK(KEY_PAGE):
+    case EVT_KEY_NEXT_VIEW:
       storageDirty(EE_MODEL);
       g_model.view += 1;
       if (g_model.view >= VIEW_COUNT) {
@@ -497,7 +496,7 @@ void menuMainView(event_t event)
       }
       break;
 
-    case EVT_KEY_LONG(KEY_PAGE):
+    case EVT_KEY_TELEMETRY:
       chainMenu(menuViewTelemetry);
       killEvents(event);
       break;
