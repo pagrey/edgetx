@@ -124,7 +124,7 @@ void LcdWidget::doPaint(QPainter &p)
 
   if (lcdDepth == 1) {
     rgb = fgDefaultColor.rgb();
-    p.setPen(rgb);
+    p.setPen(Qt::NoPen);
     p.setBrush(QBrush(rgb));
   }
 
@@ -136,7 +136,7 @@ void LcdWidget::doPaint(QPainter &p)
     mask = (1 << (y % 8));
     for (int x = 0; x < lcdWidth; x++, idx++) {
       if (lcdDepth == 1) {
-        if (localBuf[idx] & mask) p.drawRect(2 * x, 2 * y, 1, 1);
+        if (localBuf[idx] & mask) p.drawRect(2 * x, 2 * y, 2, 2);
         continue;
       }
       // lcdDepth == 4
@@ -147,10 +147,10 @@ void LcdWidget::doPaint(QPainter &p)
         rgb = qRgb(bg.red() - (z * bg.red()) / 15,
                    bg.green() - (z * bg.green()) / 15,
                    bg.blue() - (z * bg.blue()) / 15);
-        p.setPen(rgb);
+        p.setPen(Qt::NoPen);
         p.setBrush(QBrush(rgb));
       }
-      p.drawRect(2 * x, 2 * y, 1, 1);
+      p.drawRect(2 * x, 2 * y, 2, 2);
     }
   }
 }
