@@ -96,6 +96,11 @@
   #define KEYS_GPIO_PIN_PAGEUP          LL_GPIO_PIN_7  // PD.07
   #define KEYS_GPIO_REG_PAGEDN          GPIOD
   #define KEYS_GPIO_PIN_PAGEDN          LL_GPIO_PIN_3  // PD.03
+#elif defined(RADIO_ZORRO)
+  #define KEYS_GPIO_REG_PAGEUP          GPIOD
+  #define KEYS_GPIO_PIN_PAGEUP          LL_GPIO_PIN_7  // PD.07
+  #define KEYS_GPIO_REG_PAGEDN          GPIOC
+  #define KEYS_GPIO_PIN_PAGEDN          LL_GPIO_PIN_5  // PD.05
 #else
   #define KEYS_GPIO_REG_PAGEUP          GPIOD
   #define KEYS_GPIO_PIN_PAGEUP          LL_GPIO_PIN_3  // PD.03
@@ -105,6 +110,9 @@
 #if defined(RADIO_TX12)
   #define KEYS_GPIO_REG_EXIT            GPIOB
   #define KEYS_GPIO_PIN_EXIT            LL_GPIO_PIN_3  // PB.03
+#elif defined(RADIO_ZORRO)
+  #define KEYS_GPIO_REG_EXIT            GPIOD
+  #define KEYS_GPIO_PIN_EXIT            LL_GPIO_PIN_3  // PC.03
 #else
   #define KEYS_GPIO_REG_EXIT            GPIOC
   #define KEYS_GPIO_PIN_EXIT            LL_GPIO_PIN_5  // PC.05
