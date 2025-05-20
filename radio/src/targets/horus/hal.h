@@ -485,9 +485,9 @@
 
   // VBat divider is /4 on F42x and F43x devices
   #if defined(RADIO_TX16S) || defined(RADIO_T15) || defined(RADIO_F16)
-    #define ADC_VREF_PREC2              660
+    #define ADC_VREF_PREC2              330
   #elif defined(RADIO_T16) || defined(RADIO_T18)
-    #define ADC_VREF_PREC2              600
+    #define ADC_VREF_PREC2              300
   #else
     #define ADC_VREF_PREC2              500
   #endif
