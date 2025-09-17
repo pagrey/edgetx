@@ -518,7 +518,7 @@ int OpenTxFirmware::getCapability(::Capability capability)
       if (IS_FAMILY_HORUS_OR_T16(board))
         return 0;
       else
-        return 60;
+        return 30;
     case Imperial:
       return 0;
     case HasModelImage:
