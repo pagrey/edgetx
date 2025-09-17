@@ -40,7 +40,7 @@
 #define LABEL_LENGTH 16
 
 #if defined(PCBHORUS) || defined(PCBNV14) || defined(PCBPL18)
-  #define MAX_MODELS                   60
+  #define MAX_MODELS                   30
   #define MAX_OUTPUT_CHANNELS          32 // number of real output channels CH1-CH32
   #define MAX_FLIGHT_MODES             9
   #define MAX_MIXERS                   64
@@ -55,7 +55,7 @@
   #define MAX_TELEMETRY_SENSORS        60
   #define MAX_CUSTOM_SCREENS           10
 #elif defined(PCBX9D) || defined(PCBX9DP) || defined(PCBX9E)
-  #define MAX_MODELS                   60
+  #define MAX_MODELS                   30
   #define MAX_OUTPUT_CHANNELS          32 // number of real output channels CH1-CH32
   #define MAX_FLIGHT_MODES             9
   #define MAX_MIXERS                   64
@@ -69,7 +69,7 @@
   #define MAX_TRAINER_CHANNELS         16
   #define MAX_TELEMETRY_SENSORS        60
 #elif defined(PCBTARANIS)
-  #define MAX_MODELS                   60
+  #define MAX_MODELS                   30
   #define MAX_OUTPUT_CHANNELS          32 // number of real output channels CH1-CH32
   #define MAX_FLIGHT_MODES             9
   #define MAX_MIXERS                   64
