@@ -411,6 +411,7 @@
 #define TR_POTWARNINGSTATE             TR(INDENT "Pot&Slid.", INDENT "Pots & sliders")
 #define TR_SLIDERWARNING               TR(INDENT "Slid. pos.", INDENT "Slider positions")
 #define TR_POTWARNING                  TR("Pot Warn.", INDENT "Pot Warning")
+#define TR_MODEL_QUICK_SELECT        "Mallin pikavalinta"
 #define TR_TIMEZONE                    TR("Time Zone","GPS Time zone")
 #define TR_ADJUST_RTC                  TR("Adjust RTC", "Adjust RTC")
 #define TR_GPS                         "GPS"
@@ -731,7 +732,6 @@
 #define TR_BACKLIGHT_TIMER             "Inactivity timeout"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT        "Mallin pikavalinta"
   #define TR_LABELS_SELECT             "Label select"
   #define TR_LABELS_MATCH              "Label matching"
   #define TR_FAV_MATCH                 "Favorites matching"

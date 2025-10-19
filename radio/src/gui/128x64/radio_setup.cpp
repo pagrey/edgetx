@@ -94,6 +94,7 @@ enum {
   ITEM_RADIO_SETUP_START_SOUND,
   CASE_PWR_BUTTON_PRESS(ITEM_RADIO_SETUP_PWR_ON_SPEED)
   CASE_PWR_BUTTON_PRESS(ITEM_RADIO_SETUP_PWR_OFF_SPEED)
+  ITEM_MODEL_QUICK_SELECT,
   CASE_PXX2(ITEM_RADIO_SETUP_OWNER_ID)
   CASE_GPS(ITEM_RADIO_SETUP_TIMEZONE)
   ITEM_RADIO_SETUP_ADJUST_RTC,
@@ -194,6 +195,7 @@ void menuRadioSetup(event_t event)
     0,
     CASE_PWR_BUTTON_PRESS(0)
     CASE_PWR_BUTTON_PRESS(0)
+    0, // Model quick select
     CASE_PXX2(0) /* owner registration ID */
 
     CASE_GPS(0)
@@ -609,6 +611,13 @@ void menuRadioSetup(event_t event)
         g_eeGeneral.pwrOffSpeed = pwrDelayToYaml(editChoice(LCD_W-2, y, STR_PWR_OFF_DELAY, STR_PWR_OFF_DELAYS, pwrDelayFromYaml(g_eeGeneral.pwrOffSpeed), 0, 4, attr|RIGHT, event));
         break;
 #endif
+
+      case ITEM_MODEL_QUICK_SELECT:
+        lcdDrawTextAlignedLeft(y, STR_MODEL_QUICK_SELECT);
+        g_eeGeneral.modelQuickSelect =
+            editCheckBox(g_eeGeneral.modelQuickSelect, LCD_W - 9, y,
+                          nullptr, attr, event);
+        break;
 
 #if defined(PXX2)
       case ITEM_RADIO_SETUP_OWNER_ID:

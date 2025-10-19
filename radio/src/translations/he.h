@@ -403,6 +403,7 @@
 #define TR_POTWARNINGSTATE             TR(INDENT "Pot&Slid.", INDENT "סליידרים וגלגלות")
 #define TR_SLIDERWARNING               TR(INDENT "Slid. pos.", INDENT "Slider positions")
 #define TR_POTWARNING                  TR(INDENT "Pot warn.", INDENT "Pot positions")
+#define TR_MODEL_QUICK_SELECT        "בחירת מודל מהירה"
 #define TR_TIMEZONE                    "אזור זמן"
 #define TR_ADJUST_RTC                  "Adjust RTC"
 #define TR_GPS                         "GPS"
@@ -724,7 +725,6 @@
 #define TR_BACKLIGHT_TIMER             "זמן אי פעילות"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT        "בחירת מודל מהירה"
   #define TR_LABELS_SELECT             "Label select"
   #define TR_LABELS_MATCH              "Label matching"
   #define TR_FAV_MATCH                 "Favorites matching"

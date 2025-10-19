@@ -360,8 +360,7 @@ static const struct YamlNode struct_RadioData[] = {
   YAML_ARRAY("switchConfig", 2, 32, struct_switchConfig, nullptr),
   YAML_ARRAY("flexSwitches", 0, MAX_FLEX_SWITCHES, struct_flexSwitch, flex_sw_valid),
   YAML_STRING("currModelFilename", 17),
-  YAML_UNSIGNED( "modelQuickSelect", 1 ),
-  YAML_UNSIGNED( "blOffBright", 7 ),
+  YAML_UNSIGNED( "blOffBright", 8 ),
   YAML_STRING("bluetoothName", 10),
   YAML_STRING("ownerRegistrationID", 8),
   YAML_PADDING( 3 ),
@@ -383,6 +382,8 @@ static const struct YamlNode struct_RadioData[] = {
   YAML_UNSIGNED( "labelSingleSelect", 1 ),
   YAML_UNSIGNED( "labelMultiMode", 1 ),
   YAML_UNSIGNED( "favMultiMode", 1 ),
+  YAML_UNSIGNED( "modelQuickSelect", 1 ),
+  YAML_PADDING( 5 ),
   YAML_END
 };
 static const struct YamlNode struct_unsigned_8[] = {
