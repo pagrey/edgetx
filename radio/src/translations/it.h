@@ -399,6 +399,7 @@
 #define TR_POTWARNINGSTATE              TR(INDENT "Pot&Slid.", INDENT "Pots & sliders")
 #define TR_SLIDERWARNING                TR(INDENT "Pos. slid.", INDENT "Posizione slider")
 #define TR_POTWARNING                   TR(INDENT "Avv. Pot.", INDENT "Avviso Pot.")
+#define TR_MODEL_QUICK_SELECT       "Selezione rapida modello"
 #define TR_TIMEZONE                     "Ora locale"
 #define TR_ADJUST_RTC                   TR(INDENT "Agg. RTC", "Aggiusta RTC")
 #define TR_GPS                          "GPS"
@@ -719,7 +720,6 @@
 #define TR_BACKLIGHT_TIMER              "Tempo d'inattività"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT       "Selezione rapida modello"
   #define TR_LABELS_SELECT            "Seleziona etichette"
   #define TR_LABELS_MATCH             "Abbinamento etichette"
   #define TR_FAV_MATCH                "Abbinamento favoriti"

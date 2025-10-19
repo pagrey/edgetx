@@ -402,6 +402,7 @@
 #define TR_POTWARNINGSTATE             TR(INDENT "Потенц.&Повзун.", INDENT "Потенціометри & Повзунки")
 #define TR_SLIDERWARNING               TR(INDENT "Позиц. повзунк.", INDENT "Позиція повзунків")		/*need to be clarified by context*/
 #define TR_POTWARNING                  TR(INDENT "Потенц.", INDENT "Позиц. потенц.")		/*need to be clarified by context*/
+#define TR_MODEL_QUICK_SELECT        "Швидкий вибір моделі"
 #define TR_TIMEZONE                    "Часовий пояс"
 #define TR_ADJUST_RTC                  "налаштувати RTC"
 #define TR_GPS                         "GPS"		/* use english */
@@ -728,7 +729,6 @@
 #define TR_BACKLIGHT_TIMER             "Час бездіяльності"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT        "Швидкий вибір моделі"
   #define TR_LABELS_SELECT             "Вибір мітки"
   #define TR_LABELS_MATCH              "Співпад. мітки"
   #define TR_FAV_MATCH                 "Співпад. улюблен."

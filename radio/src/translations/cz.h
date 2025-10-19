@@ -410,6 +410,7 @@
 #define TR_POTWARNINGSTATE             TR("* Pot&Slid.", INDENT "Kontrola Pot&Slid.")
 #define TR_SLIDERWARNING               TR("* Slidery", INDENT "Pozice sliderů")
 #define TR_POTWARNING                  TR("* Potenc.", INDENT "Potenciometry")
+#define TR_MODEL_QUICK_SELECT        "Rychlý výběr modelu"
 #define TR_TIMEZONE                    "Časové pásmo"
 #define TR_ADJUST_RTC                  TR3("Čas z GPS", "Použít čas z GPS", "Použít čas z GPS")
 #define TR_GPS                         "GPS"
@@ -732,7 +733,6 @@
 #define TR_BACKLIGHT_TIMER             "Čas zhasnutí displeje"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT        "Rychlý výběr modelu"
   #define TR_LABELS_SELECT             "Label select"
   #define TR_LABELS_MATCH              "Label matching"
   #define TR_FAV_MATCH                 "Favorites matching"

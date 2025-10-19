@@ -398,6 +398,7 @@
 #define TR_POTWARNINGSTATE             TR(INDENT "Pot&Slid.", INDENT "ダイヤル&スライダー")
 #define TR_SLIDERWARNING               TR(INDENT "Slid. pos.", INDENT "スライダー位置")
 #define TR_POTWARNING                  TR(INDENT "Pot warn.", INDENT "ダイヤル位置")
+#define TR_MODEL_QUICK_SELECT        "モデル クイック選択"
 #define TR_TIMEZONE                    "タイムゾーン"
 #define TR_ADJUST_RTC                  "時計の修正"
 #define TR_GPS                         "GPS"
@@ -724,7 +725,6 @@
 #define TR_BACKLIGHT_TIMER             "持続時間"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT        "モデル クイック選択"
   #define TR_LABELS_SELECT             "ラベル選択"
   #define TR_LABELS_MATCH              "ラベルマッチング"
   #define TR_FAV_MATCH                 "お気に入りマッチング"

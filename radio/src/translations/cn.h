@@ -394,6 +394,7 @@
 #define TR_POTWARNINGSTATE             TR(INDENT "旋钮滑块", INDENT "旋钮和滑块")
 #define TR_SLIDERWARNING               TR(INDENT "滑块位置", INDENT "滑块位置")
 #define TR_POTWARNING                  TR(INDENT "旋钮位置", INDENT "旋钮位置")
+#define TR_MODEL_QUICK_SELECT        "快速选择模型"
 #define TR_TIMEZONE                    "时区"
 #define TR_ADJUST_RTC                  "时钟设置"
 #define TR_GPS                         "GPS"
@@ -720,7 +721,6 @@
 #define TR_BACKLIGHT_TIMER             "持续时间"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT        "快速选择模型"
   #define TR_LABELS_SELECT             "标签类型选择"
   #define TR_LABELS_MATCH              "标签匹配类型"
   #define TR_FAV_MATCH                 "收藏夹匹配类型"

@@ -820,8 +820,7 @@ PACK(struct TrainerData {
 #if defined(COLORLCD)
   #define EXTRA_GENERAL_FIELDS \
     NOBACKUP(char currModelFilename[LEN_MODEL_FILENAME+1]); \
-    NOBACKUP(uint8_t modelQuickSelect:1); \
-    NOBACKUP(uint8_t blOffBright:7); \
+    NOBACKUP(uint8_t blOffBright); \
     NOBACKUP(char bluetoothName[LEN_BLUETOOTH_NAME]);
 #else
   #define EXTRA_GENERAL_FIELDS \
@@ -972,10 +971,18 @@ PACK(struct RadioData {
   NOBACKUP(uint8_t modelCustomScriptsDisabled:1);
   NOBACKUP(uint8_t modelTelemetryDisabled:1);
 
+  NOBACKUP(uint8_t modelQuickSelect:1);
+
 #if defined(COLORLCD)
   uint8_t labelSingleSelect:1;  // 0 = multi-select, 1 = single select labels
   uint8_t labelMultiMode:1;     // 0 = match all labels (AND), 1 = match any labels (OR)
   uint8_t favMultiMode:1;       // 0 = match all (AND), 1 = match any (OR)
+  NOBACKUP(uint8_t spare:5 SKIP);
+#elif LCD_W == 128
+  uint8_t invertLCD:1;          // Invert B&W LCD display
+  NOBACKUP(uint8_t spare:2 SKIP);
+#else
+  NOBACKUP(uint8_t spare:3 SKIP);
 #endif
 
   NOBACKUP(uint8_t getBrightness() const

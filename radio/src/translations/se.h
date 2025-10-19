@@ -414,6 +414,7 @@
 #define TR_POTWARNINGSTATE              TR(INDENT "Vred&Regl.", INDENT "Vred & reglage")
 #define TR_SLIDERWARNING                TR(INDENT "Regl. pos.", INDENT "Reglagepositioner")
 #define TR_POTWARNING                   TR(INDENT "Vredläge", INDENT "Vredlägen")
+#define TR_MODEL_QUICK_SELECT         "Snabbval av modell"
 #define TR_TIMEZONE                     "Tidszon"
 #define TR_ADJUST_RTC                   "Justera RTC"
 #define TR_GPS                          "GPS"
@@ -738,7 +739,6 @@
 #define TR_NO_THEME_IMAGE               "Ingen temabild"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT         "Snabbval av modell"
   #define TR_LABELS_SELECT              "Etikettval"
   #define TR_LABELS_MATCH               "Etikettmatchning"
   #define TR_FAV_MATCH                  "Matcha favoriter"

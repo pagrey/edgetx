@@ -401,6 +401,7 @@
 #define TR_POTWARNINGSTATE             TR(INDENT "Сост потенц и тумбл", INDENT "Потенц и тумбл")
 #define TR_SLIDERWARNING               TR(INDENT "Полож тумб.", INDENT "Полож тумбл")
 #define TR_POTWARNING                  TR(INDENT "Полож пот", INDENT "Полож потенц")
+#define TR_MODEL_QUICK_SELECT        "Быстрый выбор модели"
 #define TR_TIMEZONE                    "Временная зона"
 #define TR_ADJUST_RTC                  "Настроить RTC"
 #define TR_GPS                         "GPS"
@@ -727,7 +728,6 @@
 #define TR_BACKLIGHT_TIMER             "Время бездействия"
 
 #if defined(COLORLCD)
-  #define TR_MODEL_QUICK_SELECT        "Быстрый выбор модели"
   #define TR_LABELS_SELECT             "Выбор"
   #define TR_LABELS_MATCH              "Cоответствие"
   #define TR_FAV_MATCH                 "Избранное"
