@@ -27,11 +27,13 @@
 #elif defined(KEYS_GPIO_REG_SHIFT)
   #define NAVIGATION_XLITE
 #elif defined(KEYS_GPIO_REG_LEFT)
-  #if !defined(NAVIGATION_X7)
+  #if !defined(NAVIGATION_9X)
     #define NAVIGATION_9X
   #endif
 #elif defined(KEYS_GPIO_REG_PAGEUP) && defined(KEYS_GPIO_REG_TELE)
-  #define NAVIGATION_X7
+  #if !defined(NAVIGATION_X7)
+    #define NAVIGATION_X7
+  #endif
   #define NAVIGATION_X7_TX12
 #else
   #define NAVIGATION_X7
