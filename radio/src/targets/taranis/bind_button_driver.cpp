@@ -96,6 +96,6 @@ void bindButtonHandler(event_t event)
   if (getMultiBindStatus(INTERNAL_MODULE) == MULTI_BIND_FINISHED) {
     setMultiBindStatus(INTERNAL_MODULE, MULTI_BIND_NONE);
     moduleState[INTERNAL_MODULE].mode = MODULE_MODE_NORMAL;
-    LED_ERROR_END();
+    LED_RESUME();
   }
 }

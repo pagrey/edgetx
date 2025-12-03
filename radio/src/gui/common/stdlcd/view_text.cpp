@@ -96,7 +96,7 @@ static void sdReadTextFile(const char * filename, char lines[TEXT_VIEWER_LINES][
 
 void readModelNotes()
 {
-  LED_ERROR_BEGIN();
+  LED_ERROR();
 
   strcpy(reusableBuffer.viewText.filename, MODELS_PATH "/");
   char *buf = strcat_currentmodelname(
@@ -139,7 +139,7 @@ void readModelNotes()
     if (reusableBuffer.viewText.checklistComplete) break;
   }
 
-  LED_ERROR_END();
+  LED_RESUME();
 }
 
 void menuTextView(event_t event)

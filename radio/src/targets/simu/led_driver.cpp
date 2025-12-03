@@ -23,8 +23,9 @@
 
 void usbChargerLed() {}
 void ledRed() {}
-void ledGreen() {}
-void ledBlue() {}
+void ledResume() {}
+void ledActive() {}
+void ledIdle() {}
 void ledOff() {}
 void fsLedOn(uint8_t) {}
 void fsLedOff(uint8_t) {}

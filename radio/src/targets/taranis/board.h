@@ -75,6 +75,7 @@ uint32_t isBootloaderStart(const uint8_t * buffer);
 // Pulses driver
 #define INTERNAL_MODULE_ON()   GPIO_SetBits(INTMODULE_PWR_GPIO, INTMODULE_PWR_GPIO_PIN)
 #define INTERNAL_MODULE_OFF()  GPIO_ResetBits(INTMODULE_PWR_GPIO, INTMODULE_PWR_GPIO_PIN)
+#define IS_INTERNAL_MODULE_ON()  GPIO_ReadInputDataBit(INTMODULE_PWR_GPIO, INTMODULE_PWR_GPIO_PIN)
 
 #if (defined(INTERNAL_MODULE_PXX1) || defined(INTERNAL_MODULE_PXX2)) && (!defined(PCBX9LITE) || defined(PCBX9LITES))
   #define HARDWARE_INTERNAL_RAS
@@ -313,6 +314,9 @@ void ledOff();
 void ledRed();
 void ledGreen();
 void ledBlue();
+void ledResume();
+void ledActive();
+void ledIdle();
 
 // LCD driver
 #if defined(PCBX9D) || defined(PCBX9DP) || defined(PCBX9E)

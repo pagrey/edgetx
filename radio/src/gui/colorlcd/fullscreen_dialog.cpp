@@ -257,11 +257,11 @@ void raiseAlert(const char * title, const char * msg, const char * action, uint8
 {
   TRACE("raiseAlert('%s')", msg);
   AUDIO_ERROR_MESSAGE(sound);
-  LED_ERROR_BEGIN();
+  LED_ERROR();
   auto dialog = new FullScreenDialog(WARNING_TYPE_ALERT, title ? title : "",
                                      msg ? msg : "", action ? action : "");
   dialog->runForever();
-  LED_ERROR_END();
+  LED_RESUME();
 }
 
 // POPUP_CONFIRMATION
