@@ -390,8 +390,10 @@ static void _internal_module_set_pwr(uint8_t enable)
 {
   if (enable) {
     INTERNAL_MODULE_ON();
+    ledActive();
   } else {
     INTERNAL_MODULE_OFF();
+    ledIdle();
   }
 }
 
@@ -458,6 +460,7 @@ static void _external_module_set_pwr(uint8_t enable)
 {
   if (enable) {
     EXTERNAL_MODULE_ON();
+    ledActive();
 #if defined(RADIO_NV14_FAMILY)
     if (hardwareOptions.pcbrev == PCBREV_NV14) {
       gpio_clear(EXTMODULE_PWR_FIX_GPIO);
@@ -465,6 +468,7 @@ static void _external_module_set_pwr(uint8_t enable)
 #endif
   } else {
     EXTERNAL_MODULE_OFF();
+    ledIdle();
 #if defined(RADIO_NV14_FAMILY)
     if (hardwareOptions.pcbrev == PCBREV_NV14) {
       gpio_set(EXTMODULE_PWR_FIX_GPIO);

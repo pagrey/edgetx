@@ -25,8 +25,9 @@
 
 bool usbChargerLed() { return true; }
 void ledRed() {}
-void ledGreen() {}
-void ledBlue() {}
+void ledResume() {}
+void ledActive() {}
+void ledIdle() {}
 void ledOff() {}
 void rgbLedColorApply() {}
 void rgbLedClearAll() {}
