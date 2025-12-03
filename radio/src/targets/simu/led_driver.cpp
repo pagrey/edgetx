@@ -23,8 +23,14 @@
 
 void usbChargerLed() {}
 void ledRed() {}
+#if defined(PCBTARANIS)
+void ledResume() {}
+void ledActive() {}
+void ledIdle() {}
+#else
 void ledGreen() {}
 void ledBlue() {}
+#endif
 void ledOff() {}
 void fsLedOn(uint8_t) {}
 void fsLedOff(uint8_t) {}

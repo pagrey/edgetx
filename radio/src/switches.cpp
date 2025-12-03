@@ -870,10 +870,10 @@ void checkSwitches()
   if (!isSwitchWarningRequired(bad_pots))
     return;
 
-  LED_ERROR_BEGIN();
+  LED_ERROR();
   auto dialog = new SwitchWarnDialog();
   dialog->runForever();
-  LED_ERROR_END();
+  LED_RESUME();
 }
 #elif defined(GUI)
 
@@ -892,7 +892,7 @@ void checkSwitches()
     if (!isSwitchWarningRequired(bad_pots))
       break;
 
-    LED_ERROR_BEGIN();
+    LED_ERROR();
     resetBacklightTimeout();
 
     // first - display warning
@@ -992,7 +992,7 @@ void checkSwitches()
     RTOS_WAIT_MS(10);
   }
 
-  LED_ERROR_END();
+  LED_RESUME();
 }
 #endif // GUI
 

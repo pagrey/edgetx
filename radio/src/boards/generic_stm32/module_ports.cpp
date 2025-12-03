@@ -373,8 +373,14 @@ static void _internal_module_set_pwr(uint8_t enable)
 {
   if (enable) {
     INTERNAL_MODULE_ON();
+#if defined(PCBTARANIS)
+    ledActive();
+#endif
   } else {
     INTERNAL_MODULE_OFF();
+#if defined(PCBTARANIS)
+    ledIdle();
+#endif
   }
 }
 
@@ -441,6 +447,9 @@ static void _external_module_set_pwr(uint8_t enable)
 {
   if (enable) {
     EXTERNAL_MODULE_ON();
+#if defined(PCBTARANIS)
+    ledActive();
+#endif
 #if defined(PCBNV14)
     if (hardwareOptions.pcbrev == PCBREV_NV14) {
       LL_GPIO_ResetOutputPin(EXTMODULE_PWR_FIX_GPIO, EXTMODULE_PWR_FIX_GPIO_PIN);
@@ -448,6 +457,9 @@ static void _external_module_set_pwr(uint8_t enable)
 #endif
   } else {
     EXTERNAL_MODULE_OFF();
+#if defined(PCBTARANIS)
+    ledIdle();
+#endif
 #if defined(PCBNV14)
     if (hardwareOptions.pcbrev == PCBREV_NV14) {
       LL_GPIO_SetOutputPin(EXTMODULE_PWR_FIX_GPIO, EXTMODULE_PWR_FIX_GPIO_PIN);
