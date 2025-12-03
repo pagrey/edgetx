@@ -132,3 +132,37 @@ void ledBlue()
   GPIO_LED_GPIO_ON(LED_BLUE_GPIO);
 #endif
 }
+void ledResume()
+{
+  ledOff();
+  if (IS_EXTERNAL_MODULE_ON() || IS_INTERNAL_MODULE_ON())
+  #if !defined(RADIO_TLITE)
+    ledBlue();
+  #else
+    ledGreen();
+  #endif
+  else
+  #if !defined(RADIO_TLITE)
+    ledGreen();
+  #else
+    ledBlue();
+  #endif
+}
+void ledActive()
+{
+  ledOff();
+  #if !defined(RADIO_TLITE)
+    ledBlue();
+  #else
+    ledGreen();
+  #endif
+}
+void ledIdle()
+{
+  ledOff();
+  #if !defined(RADIO_TLITE)
+    ledGreen();
+  #else
+    ledBlue();
+  #endif
+}

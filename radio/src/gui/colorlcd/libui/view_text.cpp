@@ -519,7 +519,7 @@ class CheckListDialog : public FullScreenDialog
   CheckListDialog() :
       FullScreenDialog(WARNING_TYPE_ALERT, "", "", "")
   {
-    LED_ERROR_BEGIN();
+    LED_ERROR();
     checkListOpen = true;
     setCloseCondition(std::bind(&CheckListDialog::warningInactive, this));
     readModelNotes();
@@ -534,7 +534,7 @@ class CheckListDialog : public FullScreenDialog
   bool warningInactive()
   {
     if (!checkListOpen) {
-      LED_ERROR_END();
+      LED_RESUME();
       deleteLater();
     }
     return !checkListOpen;
