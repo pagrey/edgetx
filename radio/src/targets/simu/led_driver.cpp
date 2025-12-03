@@ -25,8 +25,14 @@
 
 bool usbChargerLed() { return true; }
 void ledRed() {}
+#if defined(PCBTARANIS)
+void ledResume() {}
+void ledActive() {}
+void ledIdle() {}
+#else
 void ledGreen() {}
 void ledBlue() {}
+#endif
 void ledOff() {}
 void rgbLedColorApply() {}
 void rgbLedClearAll() {}

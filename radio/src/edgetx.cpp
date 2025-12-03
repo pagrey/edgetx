@@ -757,7 +757,7 @@ void checkAll(bool isBootCheck)
 #if defined(COLORLCD)
   if (!waitKeysReleased()) {
     auto dlg = new FullScreenDialog(WARNING_TYPE_ALERT, STR_KEYSTUCK);
-    LED_ERROR_BEGIN();
+    LED_ERROR();
     AUDIO_ERROR_MESSAGE(AU_ERROR);
 
     tmr10ms_t tgtime = get_tmr10ms() + 500;
@@ -779,7 +779,7 @@ void checkAll(bool isBootCheck)
       }
       return false;
     });
-    LED_ERROR_END();
+    LED_RESUME();
   }
 #else
   if (!waitKeysReleased()) {
@@ -849,12 +849,12 @@ void checkThrottleStick()
     else {
       strcpy(throttleNotIdle, STR_THROTTLE_NOT_IDLE);
     }
-    LED_ERROR_BEGIN();
+    LED_ERROR();
     auto dialog = new ThrottleWarnDialog(throttleNotIdle);
     MainWindow::instance()->blockUntilClose(true, [=]() {
       return dialog->deleted();
     });
-    LED_ERROR_END();
+    LED_RESUME();
   }
 }
 #else
@@ -871,7 +871,7 @@ void checkThrottleStick()
     strcpy(throttleNotIdle, STR_THROTTLE_NOT_IDLE);
   }
   // first - display warning; also deletes inputs if any have been before
-  LED_ERROR_BEGIN();
+  LED_ERROR();
   RAISE_ALERT(STR_THROTTLE_UPPERCASE, throttleNotIdle, STR_PRESS_ANY_KEY_TO_SKIP, AU_THROTTLE_ALERT);
 
 #if defined(PWR_BUTTON_PRESS)
@@ -909,7 +909,7 @@ void checkThrottleStick()
     sleep_ms(10);
   }
 
-  LED_ERROR_END();
+  LED_RESUME();
 }
 #endif
 
@@ -927,7 +927,7 @@ void checkAlarm() // added by Gohst
 #if !defined(COLORLCD)
 void alert(const char * title, const char * msg , uint8_t sound)
 {
-  LED_ERROR_BEGIN();
+  LED_ERROR();
 
   TRACE("ALERT %s: %s", title, msg);
 
@@ -964,7 +964,7 @@ void alert(const char * title, const char * msg , uint8_t sound)
 #endif
   }
 
-  LED_ERROR_END();
+  LED_RESUME();
 }
 #endif
 
@@ -1637,7 +1637,7 @@ void edgeTxInit()
 
   resetBacklightTimeout();
 
-  LED_ERROR_END();
+  LED_RESUME();
 
   pulsesStart();
   WDG_ENABLE(WDG_DURATION);
@@ -1831,7 +1831,7 @@ uint32_t pwrCheck()
           event_t evt = getEvent();
           SET_WARNING_INFO(msg, msg_len, 0);
           DISPLAY_WARNING(evt);
-          LED_ERROR_BEGIN();
+          LED_ERROR();
 
           WDG_RESET();
           lcdRefresh();
@@ -1843,7 +1843,7 @@ uint32_t pwrCheck()
           else if (!warningText) {
             // shutdown has been cancelled
             pwr_check_state = PWR_CHECK_PAUSED;
-            LED_ERROR_END();
+            LED_RESUME();
             return e_power_on;
           }
 #else  // COLORLCD
@@ -1890,7 +1890,7 @@ uint32_t pwrCheck()
           } else {
             // shutdown has been cancelled
             pwr_check_state = PWR_CHECK_PAUSED;
-            LED_ERROR_END();
+            LED_RESUME();
             return e_power_on;
           }
 

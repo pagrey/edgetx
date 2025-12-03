@@ -142,3 +142,38 @@ __weak uint32_t fsGetLedRGB(uint8_t index)
   return rgbGetLedColor(index + CFS_LED_STRIP_START);
 }
 #endif
+
+void ledResume()
+{
+  ledOff();
+  if (IS_EXTERNAL_MODULE_ON() || IS_INTERNAL_MODULE_ON())
+  #if !defined(RADIO_TLITE)
+    ledBlue();
+  #else
+    ledGreen();
+  #endif
+  else
+  #if !defined(RADIO_TLITE)
+    ledGreen();
+  #else
+    ledBlue();
+  #endif
+}
+void ledActive()
+{
+  ledOff();
+  #if !defined(RADIO_TLITE)
+    ledBlue();
+  #else
+    ledGreen();
+  #endif
+}
+void ledIdle()
+{
+  ledOff();
+  #if !defined(RADIO_TLITE)
+    ledGreen();
+  #else
+    ledBlue();
+  #endif
+}
