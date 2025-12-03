@@ -511,11 +511,11 @@ void readChecklist()
 {
   auto dialog = _readModelNotes(false);
   if (dialog) {
-    LED_ERROR_BEGIN();
+    LED_ERROR();
     MainWindow::instance()->blockUntilClose(true, [=]() {
       return dialog->deleted();
     });
-    LED_ERROR_END();
+    LED_RESUME();
   }
 }
 
