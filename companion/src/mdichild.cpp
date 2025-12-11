@@ -2030,13 +2030,13 @@ void MdiChild::updateStatusBar()
 
   if (!invalidModels()) {
     statusBarIcon->setToolTip(tr("No errors"));
-    p.load(":/images/png/tick-green.png");
+    p = QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation).pixmap(QSize(24, 24));
   } else {
     statusBarIcon->setToolTip(tr("Double click to display errors"));
     connect(statusBarIcon, &StatusBarIcon::doubleClicked, [this] () {
       QMessageBox::critical(this, tr("Models Status"), radioData.modelErrorsList().join("\n"));
     });
-    p.load(":/images/png/cross-red.png");
+    p = QApplication::style()->standardIcon(QStyle::SP_MessageBoxCritical).pixmap(QSize(24, 24));
     cnt.setText(QString::number(invalid));
   }
 
