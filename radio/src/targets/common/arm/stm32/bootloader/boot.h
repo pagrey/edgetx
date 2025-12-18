@@ -28,9 +28,9 @@
 
 #if LCD_W < 212
   #if defined(VERSION_TAG)
-    #define BOOTLOADER_TITLE               " Bootloader - " VERSION_TAG
+    #define BOOTLOADER_TITLE               "Bootloader-" VERSION_TAG
   #else
-    #define BOOTLOADER_TITLE               " Bootloader " VERSION "-" VERSION_SUFFIX
+    #define BOOTLOADER_TITLE               "Bootloader" VERSION "-" VERSION_SUFFIX
   #endif
 #else
   #if defined(VERSION_TAG)
