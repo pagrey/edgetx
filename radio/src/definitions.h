@@ -43,7 +43,7 @@
 #endif
 
 #if !defined(UNUSED)
-  #define UNUSED(x)           ((void)(x)) /* to avoid warnings */
+  #define UNUSED(X) (void)X      /* To avoid gcc/g++ warnings */
 #endif
 
 #if !defined(__ALIGNED)
