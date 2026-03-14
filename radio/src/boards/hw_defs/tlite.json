@@ -68,6 +68,20 @@
   "switches": [
     {
       "name": "SA",
+      "type": "2POS",
+      "flags": 0,
+      "inverted": false,
+      "default": "2POS",
+      "display": [
+        0,
+        1
+      ],
+      "gpio": "GPIOE",
+      "pin": "LL_GPIO_PIN_14",
+      "is_cfs": false
+    },
+    {
+      "name": "SB",
       "type": "3POS",
       "flags": 0,
       "inverted": false,
@@ -83,7 +97,7 @@
       "is_cfs": false
     },
     {
-      "name": "SB",
+      "name": "SC",
       "type": "3POS",
       "flags": 0,
       "inverted": false,
@@ -96,20 +110,6 @@
       "pin_high": "LL_GPIO_PIN_2",
       "gpio_low": "GPIOE",
       "pin_low": "LL_GPIO_PIN_1",
-      "is_cfs": false
-    },
-    {
-      "name": "SC",
-      "type": "2POS",
-      "flags": 0,
-      "inverted": false,
-      "default": "2POS",
-      "display": [
-        0,
-        1
-      ],
-      "gpio": "GPIOE",
-      "pin": "LL_GPIO_PIN_14",
       "is_cfs": false
     },
     {
