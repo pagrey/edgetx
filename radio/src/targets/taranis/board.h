@@ -78,7 +78,6 @@ enum {
 // Pulses driver
 #define INTERNAL_MODULE_ON()   gpio_set(INTMODULE_PWR_GPIO)
 #define INTERNAL_MODULE_OFF()  gpio_clear(INTMODULE_PWR_GPIO)
-#define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
 
 #if (defined(INTERNAL_MODULE_PXX1) || defined(INTERNAL_MODULE_PXX2)) && (!defined(PCBX9LITE) || defined(PCBX9LITES))
   #define HARDWARE_INTERNAL_RAS

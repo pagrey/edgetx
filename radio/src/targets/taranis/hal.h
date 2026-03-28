@@ -450,6 +450,7 @@
   #else
     #define INTMODULE_PWR_GPIO             GPIO_PIN(GPIOD, 9) // PD.09
   #endif
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOB, 6) // PB.06
   #define INTMODULE_RX_GPIO                GPIO_PIN(GPIOB, 7) // PB.07
   #define INTMODULE_USART                  USART1
@@ -465,6 +466,7 @@
   #endif
 #elif defined(RADIO_X9DP2019)
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOA, 7) // PA.07
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOB, 6) // PB.06
   #define INTMODULE_RX_GPIO                GPIO_PIN(GPIOB, 7) // PB.07
   #define INTMODULE_USART                  USART1
@@ -476,6 +478,7 @@
   #define INTMODULE_DMA_CHANNEL            LL_DMA_CHANNEL_4
 #elif defined(RADIO_X7ACCESS)
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOC, 5) // PC.05
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOB, 6) // PB.06
   #define INTMODULE_RX_GPIO                GPIO_PIN(GPIOB, 7) // PB.07
   #define INTMODULE_USART                  USART1
@@ -490,6 +493,7 @@
 #if defined(RADIO_T20V2)  || defined(RADIO_BUMBLEBEE)
   #define INTMODULE_BOOTCMD_GPIO           GPIO_PIN(GPIOE, 4) // PE.04
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOC, 6) // PC.06
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
 #else
 #if defined(RADIO_T14) || defined(RADIO_T12MAX) || defined(RADIO_TPROS)
   #define INTMODULE_BOOTCMD_GPIO           GPIO_PIN(GPIOE, 14) // PE.14
@@ -497,6 +501,7 @@
   #define INTMODULE_BOOTCMD_GPIO           GPIO_PIN(GPIOB, 1) // PB.01
 #endif
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOC, 4) // PC.04
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
 #endif
 #if defined(RADIO_V14) || defined(RADIO_V12)
   #define INTMODULE_BOOTCMD_DEFAULT     1 // RESET
@@ -518,6 +523,7 @@
   #define INTMODULE_RX_DMA_CHANNEL         LL_DMA_CHANNEL_4
 #elif defined(PCBX9E) || defined(PCBX9DP) || defined(RADIO_X7)
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOC, 6)  // PC.06
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOA, 10) // PA.10
   #define INTMODULE_TX_GPIO_AF             LL_GPIO_AF_1
   #define INTMODULE_TIMER                  TIM1
@@ -532,6 +538,7 @@
   #define INTMODULE_TIMER_FREQ             (PERI2_FREQUENCY * TIMER_MULT_APB2)
 #elif (defined(RADIO_FAMILY_JUMPER_T12) && defined(HARDWARE_INTERNAL_MODULE)) || defined(RADIO_TX12) || defined(RADIO_T8) || defined(RADIO_TPRO) || defined(RADIO_TPROV2)|| defined(RADIO_T20)
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOC, 6)  // PC.06
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOB, 10) // PB.10
   #define INTMODULE_RX_GPIO                GPIO_PIN(GPIOB, 11) // PB.11
   #define INTMODULE_USART                  USART3
@@ -558,6 +565,7 @@
   #endif
 #elif defined(RADIO_COMMANDO8)
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOE, 8)  // PE.08
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOB, 10) // PB.10
   #define INTMODULE_RX_GPIO                GPIO_PIN(GPIOB, 11) // PB.11
   #define INTMODULE_USART                  USART3
@@ -568,6 +576,7 @@
   // #define INTMODULE_DMA_STREAM            0
 #else
   #define INTMODULE_PWR_GPIO               GPIO_PIN(GPIOD, 15) // PD.15
+  #define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
   #define INTMODULE_TX_GPIO                GPIO_PIN(GPIOA, 10) // PA.10
   #define INTMODULE_TX_GPIO_AF             LL_GPIO_AF_1
   #define INTMODULE_TIMER                  TIM1
