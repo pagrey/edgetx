@@ -554,6 +554,7 @@
 #define EXTERNAL_ANTENNA
 
 #define INTMODULE_PWR_GPIO              GPIO_PIN(GPIOA, 8) // PA.08
+#define IS_INTERNAL_MODULE_ON()  gpio_read(INTMODULE_PWR_GPIO)
 #define INTMODULE_TX_GPIO               GPIO_PIN(GPIOB, 6) // PB.06
 #define INTMODULE_RX_GPIO               GPIO_PIN(GPIOB, 7) // PB.07
 #define INTMODULE_USART                 USART1
@@ -582,6 +583,7 @@
 // External Module
 #define EXTMODULE_PWR_GPIO                 GPIO_PIN(GPIOB, 3) // PB.03
 #define EXTERNAL_MODULE_PWR_OFF()          gpio_clear(EXTMODULE_PWR_GPIO)
+#define IS_EXTERNAL_MODULE_ON()       gpio_read(EXTMODULE_PWR_GPIO)
 #if (defined(PCBX10) && defined(PCBREV_EXPRESS)) || defined(RADIO_V16)
   #define EXTMODULE_TX_GPIO                GPIO_PIN(GPIOB, 10) // PB.10 (TIM2_CH3)
   #define EXTMODULE_RX_GPIO                GPIO_PIN(GPIOB, 11) // PB.11
