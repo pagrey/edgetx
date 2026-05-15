@@ -276,7 +276,7 @@ void ledIdle();
   #define LCD_CONTRAST_DEFAULT          254 // full brightness
 #elif defined(RADIO_TX12) || defined(RADIO_TX12MK2) || defined(RADIO_BOXER) || defined(RADIO_MT12)
   #define LCD_CONTRAST_DEFAULT          20
-#elif defined(RADIO_TPRO) || defined(RADIO_FAMILY_JUMPER_T12) || defined(RADIO_TPRO) || defined(RADIO_COMMANDO8) || defined(RADIO_T12MAX)
+#elif defined(RADIO_TPRO) || defined(RADIO_FAMILY_JUMPER_T12) || defined(RADIO_TPRO) || defined(RADIO_COMMANDO8) || defined(RADIO_T12MAX) || defined(RADIO_ZORRO)
   #define LCD_CONTRAST_DEFAULT          25
 #else
   #define LCD_CONTRAST_DEFAULT          15
