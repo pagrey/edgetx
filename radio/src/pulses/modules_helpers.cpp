@@ -96,8 +96,6 @@ uint8_t getMaxRxNum(uint8_t idx)
 #if defined(MULTIMODULE)
   if (isModuleMultimodule(idx)) {
     switch (g_model.moduleData[idx].multi.rfProtocol) {
-      case MODULE_SUBTYPE_MULTI_OLRS:
-        return MODULE_SUBTYPE_MULTI_OLRS_RXNUM;
       case MODULE_SUBTYPE_MULTI_BUGS:
         return MODULE_SUBTYPE_MULTI_BUGS_RXNUM;
       case MODULE_SUBTYPE_MULTI_BUGS_MINI:
