@@ -379,9 +379,6 @@ void ModulePanel::update()
           mask |= MASK_SUBTYPES;
 
         switch (module.multi.rfProtocol) {
-          case MODULE_SUBTYPE_MULTI_OLRS:
-            max_rx_num = MODULE_SUBTYPE_MULTI_OLRS_RXNUM;
-            break;
           case MODULE_SUBTYPE_MULTI_BUGS:
             max_rx_num = MODULE_SUBTYPE_MULTI_BUGS_RXNUM;
             break;
